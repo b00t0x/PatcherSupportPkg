@@ -10,7 +10,7 @@ from pathlib import Path
 
 # Configurable options
 
-IDENTITY = "OpenCore Legacy Patcher Software Signing"
+IDENTITY = "OCLP Hackintosh Mod Software Signing"
 TARGET_DIR = Path("Universal-Binaries")
 UNUSED = [
     # Mojave and Catalina non-Metal Patches
@@ -138,9 +138,10 @@ def signing_sanity_checks(file: Path) -> tuple[bool, bool]:  # (valid, needs_sig
         return False, False
 
     if "Authority=Dortania Root CA" in binary_details:
-        # We have pushed a signed binary already to the repo.
-        # This means that CI signing cannot handle this binary. Do not resign, use as is.
-        return True, False
+        return True, True
+
+    if "Authority=OCLP Hackintosh Mod Root CA" in binary_details:
+        return True, True
 
     if "Authority=Apple Root CA" in binary_details:
         # File is signed by Apple, and we have already checked that it is valid
