@@ -189,4 +189,9 @@ if __name__ == "__main__":
     for macho in machos_to_sign:
         sign_macho(macho)
 
+    # Refresh the Xe bundle envelopes after signing their nested libraries.
+    for bundle in sorted((TARGET_DIR / "11.0 20A2314a/System/Library/Extensions").glob("*")):
+        if bundle.suffix in (".kext", ".bundle"):
+            sign_macho(bundle)
+
     print("Done!")
