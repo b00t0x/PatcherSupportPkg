@@ -239,10 +239,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			sEE+OgTznSaMQwSMYN04WdCnzps=
+			g3EMkkRYi7ZcpBU1pned0H5QNWU=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"b0413e3a04f39d268c43048c60dd3859d0a7ce9b"</string>
+			<string>certificate leaf = H"6de7fc5377deac4f5fe21194684f57f553c3592c"</string>
 		</dict>
 		<key>Resources/Intel-analysis.js</key>
 		<dict>
